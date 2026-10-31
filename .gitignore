@@ -1,33 +1,73 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
-# Binaries for programs and plugins
+# ==========================================
+# macOS System Files
+# ==========================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ==========================================
+# Go (Golang)
+# ==========================================
+# Compiled binaries and executables
 *.exe
 *.exe~
 *.dll
 *.so
 *.dylib
+bin/
+dist/
 
-# Test binary, built with `go test -c`
+# Test binaries and coverage reports
 *.test
-
-# Code coverage profiles and other test artifacts
 *.out
-coverage.*
-!coverage.go
-*.coverprofile
-profile.cov
-
-# Dependency directories (remove the comment below to include it)
-# vendor/
+cover.out
+coverage.html
+profile.pprof
 
 # Go workspace file
 go.work
 go.work.sum
 
-# env file
-.env
+# Dependency cache (if vendoring locally or using local tools)
+vendor/
 
-# Editor/IDE
-# .idea/
-# .vscode/
+# Local environment variables
+.env
+.env.*
+!.env.example
+
+# ==========================================
+# sqlc
+# ==========================================
+# By default, generated Go files from sqlc (db.go, models.go, *.sql.go) 
+# SHOULD be committed to source control for smooth CI/CD builds.
+# If you prefer to generate them on the fly and ignore them, uncomment below:
+# internal/db/
+# db/sqlc/
+
+# sqlc compiler / plugin scratch files or binaries
+sqlc-gen-*
+
+# ==========================================
+# Docker
+# ==========================================
+# Persistent database data from mounted Docker volumes
+data/
+db-data/
+postgres-data/
+mysql-data/
+
+# Docker build cache or local overrides
+docker-compose.override.yml
+.docker/
+
+# ==========================================
+# IDEs & Editors (VS Code, JetBrains / GoLand)
+# ==========================================
+.idea/
+.vscode/
+*.swp
+*~

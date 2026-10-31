@@ -1,0 +1,9 @@
+packages:
+    - path: "github.com/esuEdu/shareframe-api/pkg/events"
+      output_path: "../client/src/types/events.gen.ts"
+      type_mappings:
+          "uuid.UUID": "string"
+          "time.Time": "string"
+          "json.RawMessage": "unknown"
+      frontmatter: |
+          /* eslint-disable */
